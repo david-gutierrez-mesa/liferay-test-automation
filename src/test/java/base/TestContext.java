@@ -5,12 +5,12 @@ import org.openqa.selenium.WebDriver;
 import browserManager.DriverManager;
 import browserManager.DriverManagerFactory;
 import browserManager.DriverType;
-import pageObject.PageObject;
+import pageObject.LiferayPO;
 
 public class TestContext {
 	private DriverManager webDriverManager;
 	private DriverType DRIVER_TYPE;
-	private PageObject currentPageObject;
+	private LiferayPO currentLiferayPO;
 	private String baseUrl;
 
 	public TestContext() {
@@ -35,12 +35,12 @@ public class TestContext {
 		return this.baseUrl;
 	}
 
-	public PageObject getCurrentPageObject() {
-		return currentPageObject;
+	public LiferayPO getCurrentLiferayPO() {
+		return currentLiferayPO;
 	}
 
-	public void setCurrentPageObject(PageObject currentPageObject) {
-		this.currentPageObject = currentPageObject;
+	public void setCurrentLiferayPO(LiferayPO currentLiferayPO) {
+		this.currentLiferayPO = currentLiferayPO;
 	}
 
 }
