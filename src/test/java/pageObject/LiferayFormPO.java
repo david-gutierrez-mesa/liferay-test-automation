@@ -9,7 +9,7 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 
-public class LiferayFormPO extends PageObject {
+public class LiferayFormPO extends LiferayPO {
 
 	private static final long WAIT_TIME_FOR_BUTTON = 2000;
 	private static final String PAGE_TITLE = "This is one Liferay Forms";
@@ -45,6 +45,11 @@ public class LiferayFormPO extends PageObject {
 
 	public LiferayFormPO(WebDriver driver) {
 		super(driver);
+	}
+
+	@Override
+	String getPagePath() {
+		return null;
 	}
 
 	public void navigateToPage(String baseUrl) {
