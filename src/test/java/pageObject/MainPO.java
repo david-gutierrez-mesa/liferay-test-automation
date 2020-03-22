@@ -1,15 +1,14 @@
 package pageObject;
 
-import org.openqa.selenium.WebDriver;
-import sectionObject.LoginSO;
+import pagePartsObject.LoginPPO;
 
 public class MainPO extends LiferayPO {
 
-    private LoginSO loginSO;
+    private LoginPPO loginPPO;
 
-    public MainPO(WebDriver driver) {
-        super(driver);
-        loginSO = new LoginSO(driver, wait);
+    public MainPO() {
+        super();
+        loginPPO = new LoginPPO(wait);
     }
 
     @Override
@@ -17,7 +16,7 @@ public class MainPO extends LiferayPO {
         return "";
     }
 
-    public LoginSO getLoginSO() {
-        return loginSO;
+    public LoginPPO getLoginPPO() {
+        return loginPPO;
     }
 }

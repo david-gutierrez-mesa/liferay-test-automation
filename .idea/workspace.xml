@@ -1,0 +1,336 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="9ef930f0-3e6c-4f17-863f-6e4de09965a9" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/dictionaries/davidgutierrez.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/pagePartsObject/LoginPPO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/paths/LiferayPaths.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/users/AdminUser.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/users/RegisteredUser.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/users/StandardUser.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/users/UserFactory.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/users/UserTypes.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/build.gradle" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/base/TestContext.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/base/TestContext.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/browserManager/ChromeDriverManager.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/browserManager/DriverManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/browserManager/DriverManager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/browserManager/DriverManagerFactory.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/browserManager/DriverType.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/pageObject/ConfirmationPO.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/pageObject/LiferayFormPO.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/pageObject/LiferayPO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/pageObject/LiferayPO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/pageObject/LoggedInPO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/pageObject/LoggedInPO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/pageObject/MainPO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/pageObject/MainPO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/sectionObject/LoginSO.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/stepDefinition/BaseTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/stepDefinition/BaseTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/stepDefinition/LiferayFormTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/stepDefinition/MyAmazingFragmentTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/stepDefinition/MyAmazingFragmentTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/testRunners/RunTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/testRunners/RunTests.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/resources/drivers/chromedriver.exe" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/resources/drivers/chromedriver_mac" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/resources/drivers/chromedriver_unix" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/resources/features/LiferayFormFunctionalTests.feature" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/resources/features/LiferayFormIntegrityAndRobustnessTests.feature" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/resources/features/LiferayFormSecurityTest.feature" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/resources/features/MyAmazingFragmentTest.feature" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/resources/features/MyAmazingFragmentTest.feature" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ExternalProjectsData">
+    <projectState path="$PROJECT_DIR$">
+      <ProjectState />
+    </projectState>
+  </component>
+  <component name="ExternalProjectsManager">
+    <system id="GRADLE">
+      <state>
+        <task path="$PROJECT_DIR$">
+          <activation />
+        </task>
+        <projects_view>
+          <tree_state>
+            <expand>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="LiferayTest" type="f1a62948:ProjectNode" />
+              </path>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="LiferayTest" type="f1a62948:ProjectNode" />
+                <item name="Tasks" type="e4a08cd1:TasksNode" />
+              </path>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="LiferayTest" type="f1a62948:ProjectNode" />
+                <item name="Run Configurations" type="7b0102dc:RunConfigurationsNode" />
+              </path>
+            </expand>
+            <select />
+          </tree_state>
+        </projects_view>
+      </state>
+    </system>
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+        <option value="Enum" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="ProjectId" id="1YtEX68sILfTVz2ImdoSXoOIwbo" />
+  <component name="ProjectViewState">
+    <option name="autoscrollFromSource" value="true" />
+    <option name="autoscrollToSource" value="true" />
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showExcludedFiles" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="aspect.path.notification.shown" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/test/resources/features" />
+    <property name="show.unlinked.gradle.project.popup" value="true" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="pageObject" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/test/resources/features" />
+    </key>
+  </component>
+  <component name="RunManager" selected="Gradle.RunTests">
+    <configuration name="Feature: MyAmazingFragmentTest" type="CucumberJavaRunConfigurationType" factoryName="Cucumber java" temporary="true" nameIsGenerated="true">
+      <option name="CUCUMBER_CORE_VERSION" value="4.5" />
+      <option name="FILE_PATH" value="$PROJECT_DIR$/src/test/resources/features/MyAmazingFragmentTest.feature" />
+      <option name="GLUE" value="stepDefinition" />
+      <option name="MAIN_CLASS_NAME" value="io.cucumber.core.cli.Main" />
+      <module name="LiferayTest.test" />
+      <option name="PROGRAM_PARAMETERS" value="--plugin org.jetbrains.plugins.cucumber.java.run.CucumberJvm4SMFormatter" />
+      <option name="SUGGESTED_NAME" value="Feature: MyAmazingFragmentTest" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="io.cucumber.core.cli.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="RunTests" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" value="--tests &quot;testRunners.RunTests&quot;" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value=":cleanTest" />
+            <option value=":test" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <GradleScriptDebugEnabled>false</GradleScriptDebugEnabled>
+      <method v="2" />
+    </configuration>
+    <list>
+      <item itemvalue="Cucumber java.Feature: MyAmazingFragmentTest" />
+      <item itemvalue="Gradle.RunTests" />
+    </list>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Gradle.RunTests" />
+        <item itemvalue="Cucumber java.Feature: MyAmazingFragmentTest" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="ServiceViewManager">
+    <option name="viewStates">
+      <list>
+        <serviceView>
+          <treeState>
+            <expand />
+            <select />
+          </treeState>
+        </serviceView>
+      </list>
+    </option>
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="9ef930f0-3e6c-4f17-863f-6e4de09965a9" name="Default Changelist" comment="" />
+      <created>1583753526277</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1583753526277</updated>
+      <workItem from="1583753532807" duration="2638000" />
+      <workItem from="1584725051514" duration="31781000" />
+    </task>
+    <task id="LOCAL-00001" summary="Initial commit">
+      <created>1583757526232</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1583757526232</updated>
+    </task>
+    <task id="LOCAL-00002" summary="US-0001 Add login for Liferay">
+      <created>1584748198303</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1584748198303</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State>
+              <option name="COLUMN_ORDER" />
+            </State>
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Initial commit" />
+    <MESSAGE value="US-0001 Add login for Liferay" />
+    <option name="LAST_COMMIT_MESSAGE" value="US-0001 Add login for Liferay" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="572" y="238" key="#Feature:_MyAmazingFragmentTest" timestamp="1584832773610">
+      <screen x="0" y="0" width="1792" height="1120" />
+    </state>
+    <state x="572" y="238" key="#Feature:_MyAmazingFragmentTest/0.0.1792.1120@0.0.1792.1120" timestamp="1584832773610" />
+    <state x="591" y="186" key="#RunTests" timestamp="1584836532907">
+      <screen x="0" y="0" width="1792" height="1120" />
+    </state>
+    <state x="591" y="186" key="#RunTests/0.0.1792.1120@0.0.1792.1120" timestamp="1584836532907" />
+    <state x="360" y="222" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1584832681684">
+      <screen x="0" y="0" width="1792" height="1120" />
+    </state>
+    <state x="360" y="222" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1792.1120@0.0.1792.1120" timestamp="1584832681684" />
+    <state x="684" y="350" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1583755411061">
+      <screen x="0" y="0" width="1920" height="1080" />
+    </state>
+    <state x="684" y="350" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1920.1080@0.0.1920.1080" timestamp="1583755411061" />
+    <state x="709" y="268" key="#com.intellij.ide.util.MemberChooser" timestamp="1584811752994">
+      <screen x="0" y="0" width="1792" height="1120" />
+    </state>
+    <state x="709" y="268" key="#com.intellij.ide.util.MemberChooser/0.0.1792.1120@0.0.1792.1120" timestamp="1584811752994" />
+    <state x="633" y="351" key="#com.intellij.ide.util.TreeClassChooserDialog" timestamp="1584832647269">
+      <screen x="0" y="0" width="1792" height="1120" />
+    </state>
+    <state x="633" y="351" key="#com.intellij.ide.util.TreeClassChooserDialog/0.0.1792.1120@0.0.1792.1120" timestamp="1584832647269" />
+    <state x="613" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog" timestamp="1584789076746">
+      <screen x="0" y="0" width="1792" height="1120" />
+    </state>
+    <state x="613" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/0.0.1792.1120@0.0.1792.1120" timestamp="1584789076746" />
+    <state x="634" y="314" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1584812062159">
+      <screen x="0" y="0" width="1792" height="1120" />
+    </state>
+    <state x="634" y="314" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1792.1120@0.0.1792.1120" timestamp="1584812062159" />
+    <state x="659" y="270" key="#xdebugger.evaluate" timestamp="1584829389923">
+      <screen x="0" y="0" width="1792" height="1120" />
+    </state>
+    <state x="659" y="270" key="#xdebugger.evaluate/0.0.1792.1120@0.0.1792.1120" timestamp="1584829389923" />
+    <state x="482" y="147" key="CommitChangelistDialog2" timestamp="1584748198147">
+      <screen x="0" y="0" width="1792" height="1120" />
+    </state>
+    <state x="482" y="147" key="CommitChangelistDialog2/0.0.1792.1120@0.0.1792.1120" timestamp="1584748198147" />
+    <state x="516" y="142" key="CommitChangelistDialog2/0.0.1920.1080@0.0.1920.1080" timestamp="1583757526061" />
+    <state width="1750" height="317" key="GridCell.Tab.0.bottom" timestamp="1584836261648">
+      <screen x="0" y="0" width="1792" height="1120" />
+    </state>
+    <state width="1750" height="317" key="GridCell.Tab.0.bottom/0.0.1792.1120@0.0.1792.1120" timestamp="1584836261648" />
+    <state width="1878" height="304" key="GridCell.Tab.0.bottom/0.0.1920.1080@0.0.1920.1080" timestamp="1583759187093" />
+    <state width="1750" height="317" key="GridCell.Tab.0.center" timestamp="1584836261647">
+      <screen x="0" y="0" width="1792" height="1120" />
+    </state>
+    <state width="1750" height="317" key="GridCell.Tab.0.center/0.0.1792.1120@0.0.1792.1120" timestamp="1584836261647" />
+    <state width="1878" height="304" key="GridCell.Tab.0.center/0.0.1920.1080@0.0.1920.1080" timestamp="1583759187092" />
+    <state width="1750" height="317" key="GridCell.Tab.0.left" timestamp="1584836261646">
+      <screen x="0" y="0" width="1792" height="1120" />
+    </state>
+    <state width="1750" height="317" key="GridCell.Tab.0.left/0.0.1792.1120@0.0.1792.1120" timestamp="1584836261646" />
+    <state width="1878" height="304" key="GridCell.Tab.0.left/0.0.1920.1080@0.0.1920.1080" timestamp="1583759187092" />
+    <state width="1750" height="317" key="GridCell.Tab.0.right" timestamp="1584836261647">
+      <screen x="0" y="0" width="1792" height="1120" />
+    </state>
+    <state width="1750" height="317" key="GridCell.Tab.0.right/0.0.1792.1120@0.0.1792.1120" timestamp="1584836261647" />
+    <state width="1878" height="304" key="GridCell.Tab.0.right/0.0.1920.1080@0.0.1920.1080" timestamp="1583759187093" />
+    <state width="1750" height="391" key="GridCell.Tab.1.bottom" timestamp="1584835617237">
+      <screen x="0" y="0" width="1792" height="1120" />
+    </state>
+    <state width="1750" height="391" key="GridCell.Tab.1.bottom/0.0.1792.1120@0.0.1792.1120" timestamp="1584835617237" />
+    <state width="1750" height="391" key="GridCell.Tab.1.center" timestamp="1584835617236">
+      <screen x="0" y="0" width="1792" height="1120" />
+    </state>
+    <state width="1750" height="391" key="GridCell.Tab.1.center/0.0.1792.1120@0.0.1792.1120" timestamp="1584835617236" />
+    <state width="1750" height="391" key="GridCell.Tab.1.left" timestamp="1584835617236">
+      <screen x="0" y="0" width="1792" height="1120" />
+    </state>
+    <state width="1750" height="391" key="GridCell.Tab.1.left/0.0.1792.1120@0.0.1792.1120" timestamp="1584835617236" />
+    <state width="1750" height="391" key="GridCell.Tab.1.right" timestamp="1584835617237">
+      <screen x="0" y="0" width="1792" height="1120" />
+    </state>
+    <state width="1750" height="391" key="GridCell.Tab.1.right/0.0.1792.1120@0.0.1792.1120" timestamp="1584835617237" />
+    <state x="607" y="283" key="MultipleFileMergeDialog" timestamp="1584838170048">
+      <screen x="0" y="0" width="1792" height="1120" />
+    </state>
+    <state x="607" y="283" key="MultipleFileMergeDialog/0.0.1792.1120@0.0.1792.1120" timestamp="1584838170048" />
+    <state x="572" y="289" key="RollbackChangesDialog" timestamp="1584834558784">
+      <screen x="0" y="0" width="1792" height="1120" />
+    </state>
+    <state x="572" y="289" key="RollbackChangesDialog/0.0.1792.1120@0.0.1792.1120" timestamp="1584834558784" />
+    <state width="600" height="424" key="javadoc.popup" timestamp="1584818675502">
+      <screen x="0" y="0" width="1792" height="1120" />
+    </state>
+    <state width="600" height="424" key="javadoc.popup/0.0.1792.1120@0.0.1792.1120" timestamp="1584818675502" />
+    <state x="583" y="209" width="626" height="702" key="search.everywhere.popup" timestamp="1584830090151">
+      <screen x="0" y="0" width="1792" height="1120" />
+    </state>
+    <state x="583" y="209" width="626" height="702" key="search.everywhere.popup/0.0.1792.1120@0.0.1792.1120" timestamp="1584830090151" />
+    <state x="625" y="202" width="670" height="676" key="search.everywhere.popup/0.0.1920.1080@0.0.1920.1080" timestamp="1583756880468" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/test/java/browserManager/DriverManager.java</url>
+          <line>19</line>
+          <option name="timeStamp" value="34" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/test/java/testRunners/RunTests.java</url>
+          <line>15</line>
+          <option name="timeStamp" value="36" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
+  </component>
+</project>
