@@ -1,35 +1,21 @@
 package pageObject;
 
-import org.openqa.selenium.By;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
+import browserManager.DriverManager;
 import org.openqa.selenium.support.PageFactory;
-import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 public abstract class LiferayPO {
 	private static final int WAIT_TIME_IN_SECONDS = 60;
-	protected WebDriver driver;
 	protected WebDriverWait wait;
 
-	public LiferayPO(WebDriver driver) {
-		this.driver = driver;
-		wait = new WebDriverWait(driver, WAIT_TIME_IN_SECONDS);
-		PageFactory.initElements(driver, this);
+	public LiferayPO() {
+		wait = new WebDriverWait(DriverManager.getDriver(), WAIT_TIME_IN_SECONDS);
+		PageFactory.initElements(DriverManager.getDriver(), this);
 	}
 
 	abstract String getPagePath();
 
-	public boolean checkTextExistInPage(String message) {
-		String bodyText = driver.findElement(By.tagName("body")).getText();
-		return bodyText.contains(message);
-	}
-
-	public boolean checkTitleIs(String title) {
-		return driver.getTitle().contains(title);
-	}
-
 	public void navigateToPage(String baseUrl) {
-		driver.get(String.format("%s%s", baseUrl, this.getPagePath()));
+		DriverManager.getDriver().get(String.format("%s%s", baseUrl, this.getPagePath()));
 	}
 }

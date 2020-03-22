@@ -1,50 +1,60 @@
 package browserManager;
 
-import java.nio.file.Path;
-import java.nio.file.Paths;
-import java.util.Locale;
-
+import io.github.bonigarcia.wdm.DriverManagerType;
+import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.firefox.FirefoxDriver;
 
-public abstract class DriverManager {
+import static io.github.bonigarcia.wdm.DriverManagerType.CHROME;
 
-	private static OSType OS = null;
-	protected WebDriver driver;
-	protected static final Path DRIVERS_PATH = Paths.get("src", "test", "resources", "drivers");
+public class DriverManager {
 
-	protected enum OSType {
-		WINDOWS, MAC, LINUX
+	private static final String BROWSER_PROPERTY = "browser";
+
+	private static DriverManager driverManager = null;
+	private WebDriver driver;
+	private DriverManagerType type;
+
+	private DriverManager() {
+		String browser = System.getProperty(BROWSER_PROPERTY);
+		if ((browser == null) || (browser.equals(""))) {
+			this.type = CHROME;
+		}
+		else {
+			this.type = DriverManagerType.valueOf(System.getProperty(BROWSER_PROPERTY).toUpperCase());
+		}
 	}
 
-	public void quitDriver() {
-		if (null != driver) {
-			driver.quit();
-			driver = null;
+	public static DriverManager getInstance() {
+		if (driverManager == null) {
+			driverManager = new DriverManager();
+		}
+		return driverManager;
+	}
+
+	public static void quitDriver() {
+		if (null != getInstance().driver) {
+			getInstance().driver.quit();
+			getInstance().driver = null;
 		}
 
 	}
 
-	public WebDriver getDriver() {
-		if (null == driver) {
+	public static WebDriver getDriver() {
+		if (null == getInstance().driver) {
 			createDriver();
 		}
-		return driver;
+		return getInstance().driver;
 	}
 
-	protected abstract void createDriver();
-
-	protected static OSType getOs() {
-		String operativeSystem = System.getProperty("os.name", "generic").toLowerCase(Locale.ENGLISH);
-		if (OS == null) {
-			if ((operativeSystem.contains("mac")) || (operativeSystem.contains("darwin"))) {
-				OS = OSType.MAC;
-			} else if (operativeSystem.contains("win")) {
-				OS = OSType.WINDOWS;
-			} else if (operativeSystem.contains("nux")) {
-				OS = OSType.LINUX;
-			}
+	protected static void createDriver(){
+		if (getInstance().type == DriverManagerType.FIREFOX) {
+			WebDriverManager.firefoxdriver().setup();
+			getInstance().driver = new FirefoxDriver();
+		} else {
+			WebDriverManager.chromedriver().setup();
+			getInstance().driver = new ChromeDriver();
 		}
-		return OS;
 	}
-
 }

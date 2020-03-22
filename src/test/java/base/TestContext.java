@@ -1,37 +1,22 @@
 package base;
 
-import org.openqa.selenium.WebDriver;
-
-import browserManager.DriverManager;
-import browserManager.DriverManagerFactory;
-import browserManager.DriverType;
 import pageObject.LiferayPO;
+import users.RegisteredUser;
 
 public class TestContext {
-	private DriverManager webDriverManager;
-	private DriverType DRIVER_TYPE;
 	private LiferayPO currentLiferayPO;
 	private String baseUrl;
+	private RegisteredUser user;
 
 	public TestContext() {
-		this(DriverType.CHROME, "http://localhost:8080/");
+		this("http://localhost:8080/");
 	}
 
-	private TestContext(DriverType driveType, String baseUrl) {
-		this.DRIVER_TYPE = driveType;
+	private TestContext(String baseUrl) {
 		this.baseUrl = baseUrl;
-		webDriverManager = DriverManagerFactory.getManager(DRIVER_TYPE);
 	}
 
-	public DriverManager getWebDriverManager() {
-		return webDriverManager;
-	}
-
-	public WebDriver getDriver() {
-		return webDriverManager.getDriver();
-	}
-
-	public String getBaseurl() {
+	public String getBaseUrl() {
 		return this.baseUrl;
 	}
 
@@ -39,8 +24,15 @@ public class TestContext {
 		return currentLiferayPO;
 	}
 
+	public RegisteredUser getUser() {
+		return user;
+	}
+
 	public void setCurrentLiferayPO(LiferayPO currentLiferayPO) {
 		this.currentLiferayPO = currentLiferayPO;
 	}
 
+	public void setUser(RegisteredUser user) {
+		this.user = user;
+	}
 }

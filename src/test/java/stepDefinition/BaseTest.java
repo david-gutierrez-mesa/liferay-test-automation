@@ -1,6 +1,7 @@
 package stepDefinition;
 
 import base.TestContext;
+import browserManager.DriverManager;
 import io.cucumber.java.After;
 
 public class BaseTest {
@@ -12,6 +13,7 @@ public class BaseTest {
 
 	@After
 	public void tearDown() {
-		this.testContext.getWebDriverManager().quitDriver();
+		DriverManager.getDriver().manage().deleteAllCookies();
+		DriverManager.getDriver().navigate().refresh();
 	}
 }

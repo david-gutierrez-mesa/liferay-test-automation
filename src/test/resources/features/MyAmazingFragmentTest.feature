@@ -2,6 +2,8 @@
 Feature: My Amazing Fragment
   I want to test My Amazing fragment
 
-  Scenario: First test
-    Given I am logged in Liferay as "test"
+  Scenario: Test My Amazing Fragment as Admin
+    Given I am logged in Liferay as "ADMINISTRATOR"
 
+  Scenario: Test My Amazing Fragment as Standard User
+    Given I am logged in Liferay as "STANDARD_USER"
