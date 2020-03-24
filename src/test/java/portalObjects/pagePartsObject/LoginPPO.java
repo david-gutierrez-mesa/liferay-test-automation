@@ -1,12 +1,14 @@
-package pagePartsObject;
+package portalObjects.pagePartsObject;
 
 import browserManager.DriverManager;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
-import pageObject.LoggedInPO;
-import users.RegisteredUser;
+import portalObjects.layoutObject.LiferayLayout;
+import portalObjects.layoutObject.PrivateLayout;
+import portalObjects.pageObject.WelcomePagePO;
+import portalObjects.usersObjects.RegisteredUserUO;
 
-import static paths.LiferayPaths.*;
+import static portalObjects.paths.LoginPaths.*;
 
 public class LoginPPO {
     protected WebDriverWait wait;
@@ -15,13 +17,12 @@ public class LoginPPO {
         this.wait = wait;
     }
 
-    public LoggedInPO doLogin(RegisteredUser user){
+    public void doLogin(RegisteredUserUO user){
         this.openLoginPopUp();
         DriverManager.getDriver().findElement(NAME_FIELD_ID).clear();
         DriverManager.getDriver().findElement(NAME_FIELD_ID).sendKeys(user.getUserName());
         DriverManager.getDriver().findElement(PASSWORD_FIELD_ID).sendKeys(user.getUserPassword());
         DriverManager.getDriver().findElement(SIGN_IN_BUTTON).click();
-        return new LoggedInPO();
     }
 
     public void openLoginPopUp(){

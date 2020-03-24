@@ -2,10 +2,11 @@ package stepDefinition;
 
 import base.TestContext;
 import io.cucumber.java8.En;
-import pageObject.MainPO;
-import users.RegisteredUser;
-import users.UserFactory;
-import users.UserTypes;
+import portalObjects.layoutObject.PublicLayout;
+import portalObjects.pageObject.WelcomePagePO;
+import portalObjects.usersObjects.RegisteredUserUO;
+import portalObjects.usersObjects.UserFactory;
+import portalObjects.usersObjects.UserTypes;
 
 public class MyAmazingFragmentTest implements En {
 
@@ -15,13 +16,16 @@ public class MyAmazingFragmentTest implements En {
         this.testContext = testContext;
 
         Given("^I am logged in Liferay as \"([^\"]*)\"$", (UserTypes userType) -> {
-            RegisteredUser user = UserFactory.getUser(userType);
+            RegisteredUserUO user = UserFactory.getUser(userType);
             this.testContext.setUser(user);
 
-            this.testContext.setCurrentLiferayPO(new MainPO());
-            this.testContext.getCurrentLiferayPO().navigateToPage(this.testContext.getBaseUrl());
+            this.testContext.setCurrentLiferayPO(new PublicLayout(this.testContext.getBaseUrl(), new WelcomePagePO()));
+            this.testContext.getCurrentLiferayPO().navigateToCurrentPage();
 
-            this.testContext.setCurrentLiferayPO(((MainPO) this.testContext.getCurrentLiferayPO()).getLoginPPO().doLogin(this.testContext.getUser()));
+           ((PublicLayout) this.testContext.getCurrentLiferayPO()).getLoginPPO().doLogin(this.testContext.getUser());
+        });
+        And("^I navigate to \"([^\"]*)\"$", (String page) -> {
+            this.testContext.getCurrentLiferayPO().navigateToPage(page);
         });
 
     }

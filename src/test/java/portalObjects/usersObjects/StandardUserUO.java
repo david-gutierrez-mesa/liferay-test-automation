@@ -1,6 +1,6 @@
-package users;
+package portalObjects.usersObjects;
 
-public class StandardUser implements RegisteredUser {
+public class StandardUserUO implements RegisteredUserUO {
 
     @Override
     public String getUserName() {
