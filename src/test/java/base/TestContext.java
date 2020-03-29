@@ -1,12 +1,12 @@
 package base;
 
-import pageObject.LiferayPO;
-import users.RegisteredUser;
+import portalObjects.layoutObject.LiferayLayout;
+import portalObjects.usersObjects.RegisteredUserUO;
 
 public class TestContext {
-	private LiferayPO currentLiferayPO;
+	private LiferayLayout currentLiferayPO;
 	private String baseUrl;
-	private RegisteredUser user;
+	private RegisteredUserUO user;
 
 	public TestContext() {
 		this("http://localhost:8080/");
@@ -20,19 +20,19 @@ public class TestContext {
 		return this.baseUrl;
 	}
 
-	public LiferayPO getCurrentLiferayPO() {
+	public LiferayLayout getCurrentLiferayPO() {
 		return currentLiferayPO;
 	}
 
-	public RegisteredUser getUser() {
+	public RegisteredUserUO getUser() {
 		return user;
 	}
 
-	public void setCurrentLiferayPO(LiferayPO currentLiferayPO) {
+	public void setCurrentLiferayPO(LiferayLayout currentLiferayPO) {
 		this.currentLiferayPO = currentLiferayPO;
 	}
 
-	public void setUser(RegisteredUser user) {
+	public void setUser(RegisteredUserUO user) {
 		this.user = user;
 	}
 }

@@ -1,6 +1,6 @@
-package users;
+package portalObjects.usersObjects;
 
-public class AdminUser implements RegisteredUser {
+public class AdminUO implements RegisteredUserUO {
     @Override
     public String getUserName() {
         return "test@liferay.com";
