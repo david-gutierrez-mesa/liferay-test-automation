@@ -2,15 +2,20 @@ package portalObjects.pageObject;
 
 import portalObjects.pageObject.abstracts.PublicPO;
 
-public class WelcomePagePO extends PublicPO {
+public class HomePagePO extends PublicPO {
 
-    public WelcomePagePO() {
+    public HomePagePO() {
         super();
     }
 
     @Override
     public String getPagePath() {
         return "";
+    }
+
+    @Override
+    public String getPageName() {
+        return "Home";
     }
 
 }

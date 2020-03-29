@@ -1,33 +1,31 @@
 package portalObjects.pagePartsObject;
 
-import browserManager.DriverManager;
-import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.openqa.selenium.support.ui.WebDriverWait;
-import portalObjects.layoutObject.LiferayLayout;
 import portalObjects.layoutObject.PrivateLayout;
-import portalObjects.pageObject.WelcomePagePO;
+import portalObjects.pageObject.HomePagePO;
 import portalObjects.usersObjects.RegisteredUserUO;
 
+import static common.CommonMethods.*;
 import static portalObjects.paths.LoginPaths.*;
 
 public class LoginPPO {
-    protected WebDriverWait wait;
+    private String baseUrl;
 
-    public LoginPPO(WebDriverWait wait) {
-        this.wait = wait;
+    public LoginPPO(String baseUrl) {
+        this.baseUrl = baseUrl;
     }
 
-    public void doLogin(RegisteredUserUO user){
+    public PrivateLayout doLogin(RegisteredUserUO user){
         this.openLoginPopUp();
-        DriverManager.getDriver().findElement(NAME_FIELD_ID).clear();
-        DriverManager.getDriver().findElement(NAME_FIELD_ID).sendKeys(user.getUserName());
-        DriverManager.getDriver().findElement(PASSWORD_FIELD_ID).sendKeys(user.getUserPassword());
-        DriverManager.getDriver().findElement(SIGN_IN_BUTTON).click();
+        inputText(NAME_FIELD_ID, user.getUserName());
+        inputText(PASSWORD_FIELD_ID, user.getUserPassword());
+        click(SIGN_IN_BUTTON);
+
+        return new PrivateLayout(this.baseUrl, new HomePagePO());
     }
 
     public void openLoginPopUp(){
-        DriverManager.getDriver().findElement(SIGN_IN_LINK).click();
-        wait.until(ExpectedConditions.visibilityOfElementLocated(NAME_FIELD_ID));
+        click(SIGN_IN_LINK);
+        waitForElementToBeVisible(NAME_FIELD_ID);
     }
 
 }

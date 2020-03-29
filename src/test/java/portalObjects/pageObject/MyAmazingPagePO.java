@@ -11,4 +11,8 @@ public class MyAmazingPagePO extends PrivatePO {
         return "group/guest/my-amazing-page/";
     }
 
+    @Override
+    public String getPageName() {
+        return "My Amazing Page";
+    }
 }

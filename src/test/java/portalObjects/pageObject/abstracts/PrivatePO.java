@@ -6,5 +6,4 @@ public abstract class PrivatePO extends LiferayPO {
         super();
     }
 
-
 }

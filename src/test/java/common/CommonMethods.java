@@ -1,0 +1,41 @@
+package common;
+
+import browserManager.DriverManager;
+import org.openqa.selenium.By;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+
+
+public class CommonMethods {
+    private CommonMethods() {
+    }
+
+    public static void click(By locator){
+        DriverManager.getDriver().findElement(locator).click();
+    }
+
+    public static String getPageTitle(){
+        return DriverManager.getDriver().getTitle();
+    }
+
+    public static String getTextFromElement(By locator){
+        return DriverManager.getDriver().findElement(locator).getText();
+    }
+
+    public static void inputText(By locator, String text) {
+        DriverManager.getDriver().findElement(locator).clear();
+        DriverManager.getDriver().findElement(locator).sendKeys(text);
+    }
+
+    public static boolean isElementPresent(By locator){
+       return DriverManager.getDriver().findElements(locator).size() !=0;
+    }
+
+    public static void navigateTo(String baseUrl, String path){
+        DriverManager.getDriver().get(String.format("%s%s", baseUrl, path));
+    }
+
+    public static void waitForElementToBeVisible(By locator) {
+        DriverManager.getWait().until(ExpectedConditions.visibilityOfElementLocated(locator));
+
+    }
+}

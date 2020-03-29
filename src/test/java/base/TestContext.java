@@ -1,7 +1,6 @@
 package base;
 
 import portalObjects.layoutObject.LiferayLayout;
-import portalObjects.pageObject.abstracts.LiferayPO;
 import portalObjects.usersObjects.RegisteredUserUO;
 
 public class TestContext {

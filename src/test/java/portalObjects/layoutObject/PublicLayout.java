@@ -9,7 +9,7 @@ public class PublicLayout extends LiferayLayout{
 
     public PublicLayout(String baseUrl, PublicPO pageObject) {
         super(baseUrl);
-        loginPPO = new LoginPPO(wait);
+        loginPPO = new LoginPPO(baseUrl);
         page = pageObject;
     }
 
