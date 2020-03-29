@@ -13,10 +13,9 @@ import static io.github.bonigarcia.wdm.DriverManagerType.CHROME;
 
 public class DriverManager {
 
-	private static final int WAIT_TIME_IN_SECONDS = 60;
-
 	private static final String BROWSER_PROPERTY = "browser";
 	private static final long IMPLICIT_WAIT_TIME = 10;
+	private static final int WAIT_TIME_IN_SECONDS = 60;
 
 	private static DriverManager driverManager = null;
 
@@ -27,6 +26,7 @@ public class DriverManager {
 
 	private DriverManager() {
 		String browser = System.getProperty(BROWSER_PROPERTY);
+
 		if ((browser == null) || (browser.equals(""))) {
 			this.type = CHROME;
 		}
@@ -43,6 +43,7 @@ public class DriverManager {
 			WebDriverManager.chromedriver().setup();
 			getInstance().driver = new ChromeDriver();
 		}
+
 		getInstance().driver.manage().timeouts().implicitlyWait(IMPLICIT_WAIT_TIME, TimeUnit.SECONDS);
 
 	}
@@ -51,6 +52,7 @@ public class DriverManager {
 		if (null == getInstance().driver) {
 			createDriver();
 		}
+
 		return getInstance().driver;
 
 	}
@@ -59,6 +61,7 @@ public class DriverManager {
 		if (driverManager == null) {
 			driverManager = new DriverManager();
 		}
+
 		return driverManager;
 	}
 
@@ -66,6 +69,7 @@ public class DriverManager {
 		if (null == getInstance().wait) {
 			getInstance().wait = new WebDriverWait(DriverManager.getDriver(), WAIT_TIME_IN_SECONDS);
 		}
+
 		return getInstance().wait;
 	}
 

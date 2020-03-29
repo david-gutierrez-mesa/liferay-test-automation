@@ -36,6 +36,5 @@ public class CommonMethods {
 
     public static void waitForElementToBeVisible(By locator) {
         DriverManager.getWait().until(ExpectedConditions.visibilityOfElementLocated(locator));
-
     }
 }

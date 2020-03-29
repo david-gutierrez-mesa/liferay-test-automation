@@ -3,6 +3,7 @@ package portalObjects.usersObjects;
 public class UserFactory {
     public static RegisteredUserUO getUser(UserTypes userRole){
         RegisteredUserUO user = null;
+
         switch (userRole){
             case ADMINISTRATOR:
                 user = new AdminUO();
@@ -11,6 +12,7 @@ public class UserFactory {
                 user = new StandardUserUO();
                 break;
         }
+        
         return user;
     }
 }
