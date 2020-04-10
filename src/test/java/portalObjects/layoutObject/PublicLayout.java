@@ -3,11 +3,13 @@ package portalObjects.layoutObject;
 import portalObjects.pageObject.abstracts.PublicPO;
 import portalObjects.pagePartsObject.LoginPPO;
 
-public class PublicLayout extends LiferayLayout{
+import java.net.URL;
+
+public class PublicLayout extends LiferayLayout {
 
     private LoginPPO loginPPO;
 
-    public PublicLayout(String baseUrl, PublicPO pageObject) {
+    public PublicLayout(URL baseUrl, PublicPO pageObject) {
         super(baseUrl);
         loginPPO = new LoginPPO(baseUrl);
         page = pageObject;

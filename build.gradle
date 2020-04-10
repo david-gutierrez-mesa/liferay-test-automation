@@ -14,24 +14,27 @@ plugins {
 repositories {
     jcenter()
     mavenCentral()
+    maven {
+        url "https://repository.liferay.com/nexus/content/repositories/public/"
+    }
 }
 
 dependencies {
+    api 'org.apache.commons:commons-math3:3.6.1'
+
+    compile group: 'com.jayway.jsonpath', name: 'json-path', version: '2.4.0'
+    compile group: 'org.json', name: 'json', version: '20090211'
+    compile group: 'com.liferay', name: 'net.jsourcerer.webdriver.JSErrorCollector', version: '0.6'
+    compile group: 'com.liferay', name: 'com.liferay.poshi.runner', version: '1.0.262'
 
     implementation 'org.seleniumhq.selenium:selenium-java:3.141.59'
     implementation 'io.cucumber:cucumber-picocontainer:1.2.6'
-
-    api 'org.apache.commons:commons-math3:3.6.1'
-
     implementation 'com.google.guava:guava:28.0-jre'
 
     testImplementation 'io.cucumber:cucumber-java8:4.7.4'
     testImplementation 'io.cucumber:cucumber-junit:4.7.4'
-
     testImplementation 'junit:junit:4.12'
-
     testImplementation 'io.github.bonigarcia:webdrivermanager:3.8.1'
-
 }
 
 configurations {

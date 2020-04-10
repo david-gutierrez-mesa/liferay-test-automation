@@ -1,6 +1,7 @@
 package stepDefinition;
 
 import base.TestContext;
+import io.cucumber.java.Before;
 import io.cucumber.java8.En;
 import portalObjects.layoutObject.PrivateLayout;
 import portalObjects.layoutObject.PublicLayout;
@@ -9,12 +10,18 @@ import portalObjects.pageObject.abstracts.PrivatePO;
 import portalObjects.usersObjects.RegisteredUserUO;
 import portalObjects.usersObjects.UserFactory;
 import portalObjects.usersObjects.UserTypes;
+import utils.JSON.Users;
+
+import java.io.IOException;
+import java.util.concurrent.TimeoutException;
 
 import static junit.framework.TestCase.assertTrue;
+import static utils.JSON.Users.deleteUser;
 
 public class MyAmazingFragmentTest implements En {
 
-    TestContext testContext;
+    private static boolean firstExecution = false;
+    protected TestContext testContext;
 
     public MyAmazingFragmentTest(TestContext testContext) {
         this.testContext = testContext;
@@ -33,8 +40,27 @@ public class MyAmazingFragmentTest implements En {
 
         And("^I navigate to \"([^\"]*)\"$", (String page) -> {
             this.testContext.getCurrentLiferayPO().navigateToPage(page);
-            assertTrue(((PrivatePO)this.testContext.getCurrentLiferayPO().getPage()).assertPageIsCorrect());
+            assertTrue(((PrivatePO) this.testContext.getCurrentLiferayPO().getPage()).assertPageIsCorrect());
         });
 
+    }
+
+    @Before
+    public void beforeAll() throws IOException, TimeoutException {
+        if (!firstExecution) {
+            RegisteredUserUO user = UserFactory.getUser(UserTypes.STANDARD_USER);
+            Runtime.getRuntime().addShutdownHook(new Thread() {
+                public void run() {
+                    try {
+                        deleteUser(user);
+                    } catch (IOException | TimeoutException e) {
+                        e.printStackTrace();
+                    }
+                }
+            });
+            Users.createUser(user);
+            Users.addUserToASiteByEmail(user.getEmail(), "Guest");
+            firstExecution = true;
+        }
     }
 }
