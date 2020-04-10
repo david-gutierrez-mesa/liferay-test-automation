@@ -2,12 +2,14 @@ package portalObjects.layoutObject;
 
 import portalObjects.pageObject.abstracts.LiferayPO;
 
+import java.net.URL;
+
 import static common.CommonMethods.isElementPresent;
 import static portalObjects.paths.PrivateLayoutPaths.stickerOverlayLocator;
 
 public class PrivateLayout extends LiferayLayout {
 
-    public PrivateLayout(String baseUrl, LiferayPO pageObject) {
+    public PrivateLayout(URL baseUrl, LiferayPO pageObject) {
         super(baseUrl);
         page = pageObject;
     }

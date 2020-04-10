@@ -4,17 +4,19 @@ import browserManager.DriverManager;
 import org.openqa.selenium.support.PageFactory;
 import portalObjects.pageObject.abstracts.LiferayPO;
 
+import java.net.URL;
+
 public abstract class LiferayLayout {
     protected LiferayPO page;
-    private String baseUrl;
+    private URL baseUrl;
 
-    public LiferayLayout(String baseUrl) {
+    public LiferayLayout(URL baseUrl) {
         PageFactory.initElements(DriverManager.getDriver(), this);
         this.baseUrl = baseUrl;
     }
 
     public void navigateToPage(String pageObjectClass) {
-        Class<?> c= null;
+        Class<?> c = null;
         try {
             c = Class.forName("portalObjects.pageObject.".concat(pageObjectClass).concat("PO"));
             page = (LiferayPO) c.newInstance();
