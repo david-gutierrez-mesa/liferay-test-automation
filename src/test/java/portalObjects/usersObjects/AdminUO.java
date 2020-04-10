@@ -17,12 +17,12 @@ public class AdminUO implements RegisteredUserUO {
 
     @Override
     public String getFirstName() {
-        return "test";
+        return "Test";
     }
 
     @Override
     public String getLastName() {
-        return "test";
+        return "Test";
     }
 
     @Override

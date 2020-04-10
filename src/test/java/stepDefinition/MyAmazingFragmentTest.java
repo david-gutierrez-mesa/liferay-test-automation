@@ -6,6 +6,7 @@ import io.cucumber.java8.En;
 import portalObjects.layoutObject.PrivateLayout;
 import portalObjects.layoutObject.PublicLayout;
 import portalObjects.pageObject.HomePagePO;
+import portalObjects.pageObject.MyAmazingPagePO;
 import portalObjects.pageObject.abstracts.PrivatePO;
 import portalObjects.usersObjects.RegisteredUserUO;
 import portalObjects.usersObjects.UserFactory;
@@ -38,9 +39,17 @@ public class MyAmazingFragmentTest implements En {
             assertTrue(((PrivateLayout) this.testContext.getCurrentLiferayPO()).stickerOverlayIsDisplayed());
         });
 
-        And("^I navigate to \"([^\"]*)\"$", (String page) -> {
+        When("^I navigate to \"([^\"]*)\"$", (String page) -> {
             this.testContext.getCurrentLiferayPO().navigateToPage(page);
             assertTrue(((PrivatePO) this.testContext.getCurrentLiferayPO().getPage()).assertPageIsCorrect());
+        });
+        Then("^I can see my name$", () -> {
+            String myName = testContext.getUser().getFirstName();
+            assertTrue(((MyAmazingPagePO) this.testContext.getCurrentLiferayPO().getPage()).getMyAmazingFragmentPPO().assertFirstNameIs(myName));
+        });
+        Then("^I can see my e-mail$", () -> {
+            String myEmail = testContext.getUser().getEmail();
+            assertTrue(((MyAmazingPagePO) this.testContext.getCurrentLiferayPO().getPage()).getMyAmazingFragmentPPO().assertEmailIs(myEmail));
         });
 
     }
