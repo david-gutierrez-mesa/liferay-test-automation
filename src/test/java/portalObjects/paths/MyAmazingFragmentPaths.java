@@ -8,4 +8,5 @@ public class MyAmazingFragmentPaths {
 
     private MyAmazingFragmentPaths() {
     }
+
 }

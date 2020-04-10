@@ -20,8 +20,8 @@ public class MyAmazingPagePO extends PrivatePO {
         return "My Amazing Page";
     }
 
-
     public MyAmazingFragmentPPO getMyAmazingFragmentPPO() {
         return myAmazingFragmentPPO;
     }
+
 }
