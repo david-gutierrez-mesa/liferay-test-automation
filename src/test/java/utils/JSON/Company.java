@@ -16,7 +16,7 @@ public class Company {
 
         String portalURL = getPortalURL();
 
-        String curl = String.format("%s/api/jsonws/company/get-company-by-virtual-host/virtual-host/%s -u %s:%s", portalURL, portalInstanceName, ADMIN_USER_EMAIL, ADMIN_USER_PASSWORD);
+        String curl = String.format("%sapi/jsonws/company/get-company-by-virtual-host/virtual-host/%s -u %s:%s", portalURL, portalInstanceName, ADMIN_USER_EMAIL, ADMIN_USER_PASSWORD);
 
         return JSONCurlUtil.get(curl, "$['companyId']");
     }

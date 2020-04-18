@@ -10,10 +10,10 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 import java.util.concurrent.TimeUnit;
 
 import static io.github.bonigarcia.wdm.DriverManagerType.CHROME;
+import static utils.tools.SystemProperties.getBrowser;
 
 public class DriverManager {
 
-    private static final String BROWSER_PROPERTY = "browser";
     private static final long IMPLICIT_WAIT_TIME = 10;
     private static final int WAIT_TIME_IN_SECONDS = 60;
 
@@ -25,13 +25,14 @@ public class DriverManager {
 
 
     private DriverManager() {
-        String browser = System.getProperty(BROWSER_PROPERTY);
+        String browser = getBrowser();
 
         if ((browser == null) || (browser.equals(""))) {
             this.type = CHROME;
         } else {
-            this.type = DriverManagerType.valueOf(System.getProperty(BROWSER_PROPERTY).toUpperCase());
+            this.type = DriverManagerType.valueOf(browser.toUpperCase());
         }
+
     }
 
     protected static void createDriver() {
@@ -62,6 +63,7 @@ public class DriverManager {
         }
 
         return driverManager;
+
     }
 
     public static WebDriverWait getWait() {
@@ -70,6 +72,7 @@ public class DriverManager {
         }
 
         return getInstance().wait;
+
     }
 
     public static void quitDriver() {
@@ -79,4 +82,5 @@ public class DriverManager {
         }
 
     }
+
 }

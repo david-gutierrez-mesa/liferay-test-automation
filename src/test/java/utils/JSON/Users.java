@@ -25,22 +25,22 @@ public class Users {
     public static void addUserToASite(String userId, String siteId) throws IOException, TimeoutException {
         String baseUrl = getPortalURL();
 
-        String curl = String.format("%s/api/jsonws/user/add-group-users/group-id/%s/user-ids/%s -u %s:%s", baseUrl, siteId, userId, ADMIN_USER_EMAIL, ADMIN_USER_PASSWORD);
+        String curl = String.format("%sapi/jsonws/user/add-group-users/group-id/%s/user-ids/%s -u %s:%s", baseUrl, siteId, userId, ADMIN_USER_EMAIL, ADMIN_USER_PASSWORD);
         JSONCurlUtil.post(curl);
     }
 
     public static void agreeToTermsAndAnswerReminderQuery(String userId) throws IOException, TimeoutException {
         String baseUrl = getPortalURL();
 
-        String curl = String.format("%s/api/jsonws/user/update-agreed-to-terms-of-use/user-id/%s/agreed-to-terms-of-use/true -u %s:%s", baseUrl, userId, ADMIN_USER_EMAIL, ADMIN_USER_PASSWORD);
+        String curl = String.format("%sapi/jsonws/user/update-agreed-to-terms-of-use/user-id/%s/agreed-to-terms-of-use/true -u %s:%s", baseUrl, userId, ADMIN_USER_EMAIL, ADMIN_USER_PASSWORD);
         JSONCurlUtil.post(curl);
 
-        curl = String.format("%s/api/jsonws/user/update-reminder-query/user-id/%s/question/what-is-your-father%%27s-middle-name/answer/test t-u %s:%s", baseUrl, userId, ADMIN_USER_EMAIL, ADMIN_USER_PASSWORD);
+        curl = String.format("%sapi/jsonws/user/update-reminder-query/user-id/%s/question/what-is-your-father%%27s-middle-name/answer/test t-u %s:%s", baseUrl, userId, ADMIN_USER_EMAIL, ADMIN_USER_PASSWORD);
         JSONCurlUtil.post(curl);
     }
 
     public static void createUser(RegisteredUserUO user) throws IOException, TimeoutException {
-        String requestURL = getPortalURL() + "/api/jsonws/user/add-user";
+        String requestURL = getPortalURL() + "api/jsonws/user/add-user";
 
         String companyId = getCompanyId();
 
@@ -91,7 +91,7 @@ public class Users {
     public static void deleteUserByUserId(String userId) throws IOException, TimeoutException {
         String baseUrl = getPortalURL();
 
-        String curl = String.format("%s/api/jsonws/user/delete-user -u %s:%s -d userId=%s", baseUrl, ADMIN_USER_EMAIL, ADMIN_USER_PASSWORD, userId);
+        String curl = String.format("%sapi/jsonws/user/delete-user -u %s:%s -d userId=%s", baseUrl, ADMIN_USER_EMAIL, ADMIN_USER_PASSWORD, userId);
 
         JSONCurlUtil.post(curl);
 
@@ -100,13 +100,13 @@ public class Users {
     public static void disablePasswordChangeRequired(String companyId) throws IOException, TimeoutException {
         String baseUrl = getPortalURL();
 
-        String curl = String.format("%s/api/jsonws/passwordpolicy/search/company-id/%s/name/default/start/0/end/1/-obc -u %s:%s", baseUrl, companyId, ADMIN_USER_EMAIL, ADMIN_USER_PASSWORD);
+        String curl = String.format("%sapi/jsonws/passwordpolicy/search/company-id/%s/name/default/start/0/end/1/-obc -u %s:%s", baseUrl, companyId, ADMIN_USER_EMAIL, ADMIN_USER_PASSWORD);
 
         String passwordPolicyId = JSONCurlUtil.post(curl, "$.[?(@['name'] == 'Default Password Policy')]['passwordPolicyId']");
 
         passwordPolicyId = passwordPolicyId.replace("[\"", "").replace("\"]", "");
 
-        curl = baseUrl + "/api/jsonws/passwordpolicy/update-password-policy " +
+        curl = baseUrl + "api/jsonws/passwordpolicy/update-password-policy " +
                 "-u " + ADMIN_USER_EMAIL + ":" + ADMIN_USER_PASSWORD + " " +
                 "-d passwordPolicyId=" + passwordPolicyId + " " +
                 "-d name='Default Password Policy' " +
@@ -143,7 +143,7 @@ public class Users {
 
         String companyId = getCompanyId();
 
-        String curl = String.format("%s/api/jsonws/user/get-user-by-email-address/company-id/%s/email-address/%s -u %s:%s", baseUrl, companyId, emailAddress, ADMIN_USER_EMAIL, ADMIN_USER_PASSWORD);
+        String curl = String.format("%sapi/jsonws/user/get-user-by-email-address/company-id/%s/email-address/%s -u %s:%s", baseUrl, companyId, emailAddress, ADMIN_USER_EMAIL, ADMIN_USER_PASSWORD);
 
         return JSONCurlUtil.get(curl, "$['userId']");
     }

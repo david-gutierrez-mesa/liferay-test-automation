@@ -2,8 +2,8 @@ package portalObjects.pageObject.abstracts;
 
 import java.net.URL;
 
-import static common.CommonMethods.getPageTitle;
-import static common.CommonMethods.navigateTo;
+import static browserManager.CommonMethods.getPageTitle;
+import static browserManager.CommonMethods.navigateTo;
 
 public abstract class LiferayPO {
 

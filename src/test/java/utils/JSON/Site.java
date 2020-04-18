@@ -17,10 +17,12 @@ public class Site {
         String portalURL = getPortalURL();
         String companyId = getCompanyId();
 
-        String curl = String.format("%s/api/jsonws/group/get-groups/company-id/%s/parent-group-id/0/site/%s -u %s:%s", portalURL, companyId, site, ADMIN_USER_EMAIL, ADMIN_USER_PASSWORD);
+        String curl = String.format("%sapi/jsonws/group/get-groups/company-id/%s/parent-group-id/0/site/%s -u %s:%s", portalURL, companyId, site, ADMIN_USER_EMAIL, ADMIN_USER_PASSWORD);
         String jsonPath = String.format("$.[?(@['nameCurrentValue'] == '%s')]['groupId']", siteName);
         String groupId = JSONCurlUtil.get(curl, jsonPath);
 
         return groupId.replace("[\"", "").replace("\"]", "");
+
     }
+
 }
