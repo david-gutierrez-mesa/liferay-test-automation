@@ -4,7 +4,7 @@ import portalObjects.pageObject.abstracts.LiferayPO;
 
 import java.net.URL;
 
-import static common.CommonMethods.isElementPresent;
+import static browserManager.CommonMethods.isElementPresent;
 import static portalObjects.paths.PrivateLayoutPaths.stickerOverlayLocator;
 
 public class PrivateLayout extends LiferayLayout {

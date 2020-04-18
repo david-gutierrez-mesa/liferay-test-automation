@@ -6,7 +6,7 @@ import portalObjects.usersObjects.RegisteredUserUO;
 
 import java.net.URL;
 
-import static common.CommonMethods.*;
+import static browserManager.CommonMethods.*;
 import static portalObjects.paths.LoginPaths.*;
 
 public class LoginPPO {

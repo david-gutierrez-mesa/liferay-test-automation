@@ -6,17 +6,23 @@ import portalObjects.usersObjects.RegisteredUserUO;
 import java.net.MalformedURLException;
 import java.net.URL;
 
+import static utils.tools.SystemProperties.getUrl;
+
 public class TestContext {
+    private static final String DEFAULT_URL = "http://localhost:8080/";
+
     private LiferayLayout currentLiferayPO;
     private URL baseUrl;
     private RegisteredUserUO user;
 
     public TestContext() throws MalformedURLException {
-        this(new URL("http://localhost:8080/"));
-    }
+        URL url = getUrl();
+        if (url == null) {
+            url = new URL(DEFAULT_URL);
 
-    private TestContext(URL baseUrl) {
-        this.baseUrl = baseUrl;
+        }
+        this.baseUrl = url;
+
     }
 
     public URL getBaseUrl() {

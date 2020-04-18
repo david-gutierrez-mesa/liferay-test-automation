@@ -1,6 +1,6 @@
 package portalObjects.pagePartsObject;
 
-import static common.CommonMethods.getTextFromElement;
+import static browserManager.CommonMethods.getTextFromElement;
 import static portalObjects.paths.MyAmazingFragmentPaths.emailLocator;
 import static portalObjects.paths.MyAmazingFragmentPaths.firstNameLocator;
 
