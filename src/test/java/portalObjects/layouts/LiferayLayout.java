@@ -1,8 +1,8 @@
-package portalObjects.layoutObject;
+package portalObjects.layouts;
 
 import browserManager.DriverManager;
 import org.openqa.selenium.support.PageFactory;
-import portalObjects.pageObject.abstracts.LiferayPO;
+import portalObjects.pages.abstracts.LiferayPO;
 
 import java.net.URL;
 
@@ -16,9 +16,9 @@ public abstract class LiferayLayout {
     }
 
     public void navigateToPage(String pageObjectClass) {
-        Class<?> c = null;
+        Class<?> c;
         try {
-            c = Class.forName("portalObjects.pageObject.".concat(pageObjectClass).concat("PO"));
+            c = Class.forName("portalObjects.pages.".concat(pageObjectClass.replaceAll("\\s+", "")));
             page = (LiferayPO) c.newInstance();
         } catch (ClassNotFoundException | IllegalAccessException | InstantiationException e) {
             e.printStackTrace();

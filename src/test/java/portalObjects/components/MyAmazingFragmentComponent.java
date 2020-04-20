@@ -1,12 +1,12 @@
-package portalObjects.pagePartsObject;
+package portalObjects.components;
 
 import static browserManager.CommonMethods.getTextFromElement;
 import static portalObjects.paths.MyAmazingFragmentPaths.emailLocator;
 import static portalObjects.paths.MyAmazingFragmentPaths.firstNameLocator;
 
-public class MyAmazingFragmentPPO {
+public class MyAmazingFragmentComponent {
 
-    public MyAmazingFragmentPPO() {
+    public MyAmazingFragmentComponent() {
 
     }
 

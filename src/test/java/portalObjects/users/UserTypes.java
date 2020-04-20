@@ -1,4 +1,4 @@
-package portalObjects.usersObjects;
+package portalObjects.users;
 
 public enum UserTypes {
     ADMINISTRATOR, STANDARD_USER

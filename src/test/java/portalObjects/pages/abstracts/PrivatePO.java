@@ -1,4 +1,4 @@
-package portalObjects.pageObject.abstracts;
+package portalObjects.pages.abstracts;
 
 public abstract class PrivatePO extends LiferayPO {
 

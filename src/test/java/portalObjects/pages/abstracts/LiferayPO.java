@@ -1,4 +1,4 @@
-package portalObjects.pageObject.abstracts;
+package portalObjects.pages.abstracts;
 
 import java.net.URL;
 

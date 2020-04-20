@@ -1,10 +1,10 @@
-package portalObjects.pageObject;
+package portalObjects.pages;
 
-import portalObjects.pageObject.abstracts.PublicPO;
+import portalObjects.pages.abstracts.PublicPO;
 
-public class HomePagePO extends PublicPO {
+public class HomePage extends PublicPO {
 
-    public HomePagePO() {
+    public HomePage() {
         super();
     }
 

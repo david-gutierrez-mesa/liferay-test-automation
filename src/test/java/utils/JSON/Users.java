@@ -1,7 +1,7 @@
 package utils.JSON;
 
 import com.liferay.poshi.runner.util.JSONCurlUtil;
-import portalObjects.usersObjects.RegisteredUserUO;
+import portalObjects.users.RegisteredUser;
 
 import java.io.IOException;
 import java.util.concurrent.TimeoutException;
@@ -39,7 +39,7 @@ public class Users {
         JSONCurlUtil.post(curl);
     }
 
-    public static void createUser(RegisteredUserUO user) throws IOException, TimeoutException {
+    public static void createUser(RegisteredUser user) throws IOException, TimeoutException {
         String requestURL = getPortalURL() + "api/jsonws/user/add-user";
 
         String companyId = getCompanyId();
@@ -80,7 +80,7 @@ public class Users {
         agreeToTermsAndAnswerReminderQuery(userId);
     }
 
-    public static void deleteUser(RegisteredUserUO user) throws IOException, TimeoutException {
+    public static void deleteUser(RegisteredUser user) throws IOException, TimeoutException {
 
         String userId = getUserIdByEmailAddress(user.getEmail());
 

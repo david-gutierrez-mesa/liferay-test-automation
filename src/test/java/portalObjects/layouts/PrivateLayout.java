@@ -1,6 +1,6 @@
-package portalObjects.layoutObject;
+package portalObjects.layouts;
 
-import portalObjects.pageObject.abstracts.LiferayPO;
+import portalObjects.pages.abstracts.LiferayPO;
 
 import java.net.URL;
 

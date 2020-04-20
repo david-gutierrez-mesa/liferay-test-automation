@@ -1,9 +1,9 @@
-package portalObjects.usersObjects;
+package portalObjects.users;
 
 import java.time.LocalDate;
 import java.util.Locale;
 
-public interface RegisteredUserUO {
+public interface RegisteredUser {
     LocalDate getDateOfBirth();
 
     String getEmail();

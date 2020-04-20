@@ -1,9 +1,9 @@
-package portalObjects.usersObjects;
+package portalObjects.users;
 
 import java.time.LocalDate;
 import java.util.Locale;
 
-public class StandardUserUO implements RegisteredUserUO {
+public class StandardUser implements RegisteredUser {
 
     @Override
     public LocalDate getDateOfBirth() {

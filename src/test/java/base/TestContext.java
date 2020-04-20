@@ -1,7 +1,7 @@
 package base;
 
-import portalObjects.layoutObject.LiferayLayout;
-import portalObjects.usersObjects.RegisteredUserUO;
+import portalObjects.layouts.LayoutObjectManager;
+import portalObjects.users.RegisteredUser;
 
 import java.net.MalformedURLException;
 import java.net.URL;
@@ -11,9 +11,10 @@ import static utils.tools.SystemProperties.getUrl;
 public class TestContext {
     private static final String DEFAULT_URL = "http://localhost:8080/";
 
-    private LiferayLayout currentLiferayPO;
     private URL baseUrl;
-    private RegisteredUserUO user;
+    private RegisteredUser user;
+
+    private LayoutObjectManager layoutObjectManager;
 
     public TestContext() throws MalformedURLException {
         URL url = getUrl();
@@ -22,6 +23,7 @@ public class TestContext {
 
         }
         this.baseUrl = url;
+        layoutObjectManager = new LayoutObjectManager(this.baseUrl);
 
     }
 
@@ -29,19 +31,15 @@ public class TestContext {
         return this.baseUrl;
     }
 
-    public LiferayLayout getCurrentLiferayPO() {
-        return currentLiferayPO;
-    }
-
-    public void setCurrentLiferayPO(LiferayLayout currentLiferayPO) {
-        this.currentLiferayPO = currentLiferayPO;
-    }
-
-    public RegisteredUserUO getUser() {
+    public RegisteredUser getUser() {
         return user;
     }
 
-    public void setUser(RegisteredUserUO user) {
+    public void setUser(RegisteredUser user) {
         this.user = user;
+    }
+
+    public LayoutObjectManager getLayoutObjectManager() {
+        return layoutObjectManager;
     }
 }
