@@ -18,6 +18,8 @@ public interface RegisteredUser {
 
     String getPassword();
 
+    String getReminderQuestionAnswer();
+
     String getScreenName();
 
 }

@@ -41,6 +41,11 @@ public class StandardUser implements RegisteredUser {
     }
 
     @Override
+    public String getReminderQuestionAnswer() {
+        return "test";
+    }
+
+    @Override
     public String getScreenName() {
         return "standarduser";
     }

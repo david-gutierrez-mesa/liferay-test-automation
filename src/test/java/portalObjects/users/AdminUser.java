@@ -41,6 +41,11 @@ public class AdminUser implements RegisteredUser {
     }
 
     @Override
+    public String getReminderQuestionAnswer() {
+        return "test";
+    }
+
+    @Override
     public String getScreenName() {
         return "test";
     }

@@ -5,7 +5,7 @@ import portalObjects.pages.abstracts.LiferayPO;
 import java.net.URL;
 
 import static browserManager.CommonMethods.isElementPresent;
-import static portalObjects.paths.PrivateLayoutPaths.stickerOverlayLocator;
+import static portalObjects.paths.PrivateLayoutPaths.STICKER_OVERLAY_LOCATOR;
 
 public class PrivateLayout extends LiferayLayout {
 
@@ -19,6 +19,6 @@ public class PrivateLayout extends LiferayLayout {
     //
 
     public boolean stickerOverlayIsDisplayed() {
-        return (isElementPresent(stickerOverlayLocator));
+        return (isElementPresent(STICKER_OVERLAY_LOCATOR));
     }
 }
