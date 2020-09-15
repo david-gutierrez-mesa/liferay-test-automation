@@ -41,6 +41,18 @@ public class CommonMethods {
 
     }
 
+    public static void waitAndClick(By locator) {
+        waitForElementToBeVisible(locator);
+        click(locator);
+
+    }
+
+    public static void waitAndiInputText(By locator, String text) {
+        waitForElementToBeVisible(locator);
+        inputText(locator, text);
+
+    }
+
     public static void waitForElementToBeVisible(By locator) {
         DriverManager.getWait().until(ExpectedConditions.visibilityOfElementLocated(locator));
 

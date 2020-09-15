@@ -83,4 +83,12 @@ public class DriverManager {
 
     }
 
+    public static void resetImplicitWaitTime(){
+        getInstance().driver.manage().timeouts().implicitlyWait(IMPLICIT_WAIT_TIME, TimeUnit.SECONDS);
+    }
+
+    public static void setImplicitWaitTime(long seconds){
+        getInstance().driver.manage().timeouts().implicitlyWait(seconds, TimeUnit.SECONDS);
+    }
+
 }

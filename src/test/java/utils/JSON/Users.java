@@ -100,7 +100,18 @@ public class Users {
     public static void disablePasswordChangeRequired(String companyId) throws IOException, TimeoutException {
         String baseUrl = getPortalURL();
 
+        //For 7.3 and older
         String curl = String.format("%sapi/jsonws/passwordpolicy/search/company-id/%s/name/default/start/0/end/1/-obc -u %s:%s", baseUrl, companyId, ADMIN_USER_EMAIL, ADMIN_USER_PASSWORD);
+
+        //For 7.4 and newer
+        //        String curl = String.format("%sapi/jsonws/passwordpolicy/search " +
+        //                        "-u %s:%s " +
+        //                        "-d companyId=%s " +
+        //                        "-d \"name=Default%%20Password%%20Policy\" " +
+        //                        "-d \"start=-1\" " +
+        //                        "-d \"end=-1\" " +
+        //                        "-d -orderByComparator=",
+        //                baseUrl, ADMIN_USER_EMAIL, ADMIN_USER_PASSWORD, companyId);
 
         String passwordPolicyId = JSONCurlUtil.post(curl, "$.[?(@['name'] == 'Default Password Policy')]['passwordPolicyId']");
 
@@ -111,7 +122,7 @@ public class Users {
                 "-d passwordPolicyId=" + passwordPolicyId + " " +
                 "-d name='Default Password Policy' " +
                 "-d description='Default Password Policy' " +
-                "-d changeable=true " +
+                "-d changeable=false " +
                 "-d changeRequired=false " +
                 "-d minAge=0 " +
                 "-d checkSyntax=false " +

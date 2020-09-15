@@ -4,6 +4,13 @@ import base.TestContext;
 import browserManager.DriverManager;
 import io.cucumber.java.After;
 import io.cucumber.java.Before;
+import portalObjects.users.RegisteredUser;
+import portalObjects.users.UserFactory;
+import portalObjects.users.UserTypes;
+
+import java.net.MalformedURLException;
+
+import static stepDefinition.CommonSteps.fistLogin;
 
 public class BaseTest {
     private static boolean firstExecution = false;
@@ -14,10 +21,15 @@ public class BaseTest {
     }
 
     @Before
-    public void setUp() {
+    public void setUp() throws MalformedURLException {
         if (!firstExecution) {
             Runtime.getRuntime().addShutdownHook(new Thread(DriverManager::quitDriver));
+
+            RegisteredUser adminUser = UserFactory.getUser(UserTypes.ADMINISTRATOR);
+            fistLogin(adminUser, testContext.getBaseUrl());
+
             firstExecution = true;
+
         }
     }
 
