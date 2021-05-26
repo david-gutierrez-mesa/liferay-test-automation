@@ -8,7 +8,7 @@ This git project is a selenium example for test automation of Liferay instances.
 We just need to run "cucumber" task with Gradle in the root project folder:
 
 ```
-gradle :cleanTest :test
+./gradlew :cleanTest :test
 ```
 
 Or execute test runner java file RunTests.java from your ID.
@@ -21,7 +21,7 @@ If you want to run against another instance you have access to can use the flag 
 For example, to run against 192.168.40.58 with protocol http and port 7300, just use:
 
 ```
-gradle :cleanTest :test -Durl=http://192.168.40.58:7300/
+./gradlew :cleanTest :test -Durl=http://192.168.40.58:7300/
 ```
 
 ### Run with other browsers
@@ -30,11 +30,19 @@ Default browser is Chrome. To run in another browser, we need to have it install
 For example, to run with FireFox, just use:
 
 ```
-gradle :cleanTest :test -Dbrowser=firefox
+./gradlew :cleanTest :test -Dbrowser=firefox
 ```
 
 ## Test results
-After test execution, a basic HTLM report is automatically generated in ./target/ folder.
+After test execution, a basic HTML report is automatically generated in ./target/ folder.
+
+## How to test this code as it is now?
+1) Install docker https://docs.docker.com/get-docker/
+2) Increase your Memory in docker to at least 6.00 GB (settings-> Resources -> Advanced -> Memory) 
+3) Run 
+> docker run --name my-local-liferay-test --rm -p 9080:8080 dgutimesa/my-test:v4
+4) Run test in a console
+> ./gradlew :cleanTest :test -Durl=http://localhost:9080/
 
 ## Contact
-If you have any further question, just send me an email to david.gutierrez@liferay.com
+If you have any further question, just email me to david.gutierrez@liferay.com
