@@ -4,13 +4,16 @@ import io.github.bonigarcia.wdm.DriverManagerType;
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.firefox.FirefoxOptions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.util.concurrent.TimeUnit;
 
 import static io.github.bonigarcia.wdm.DriverManagerType.CHROME;
 import static utils.tools.SystemProperties.getBrowser;
+import static utils.tools.SystemProperties.getCiModeProperty;
 
 public class DriverManager {
 
@@ -19,7 +22,7 @@ public class DriverManager {
 
     private static DriverManager driverManager = null;
 
-    private DriverManagerType type;
+    private final DriverManagerType type;
     private WebDriver driver;
     private WebDriverWait wait;
 
@@ -36,12 +39,21 @@ public class DriverManager {
     }
 
     protected static void createDriver() {
+        boolean ciMode = getCiModeProperty();
         if (getInstance().type == DriverManagerType.FIREFOX) {
+            FirefoxOptions firefoxOptions = new FirefoxOptions();
+            if (ciMode){
+                firefoxOptions.addArguments("--headless", "--no-sandbox", "--disable-dev-shm-usage");
+            }
             WebDriverManager.firefoxdriver().setup();
-            getInstance().driver = new FirefoxDriver();
+            getInstance().driver = new FirefoxDriver(firefoxOptions);
         } else {
+            ChromeOptions chromeOptions = new ChromeOptions();
+            if (ciMode){
+                chromeOptions.addArguments("--headless", "--no-sandbox", "--disable-dev-shm-usage");
+            }
             WebDriverManager.chromedriver().setup();
-            getInstance().driver = new ChromeDriver();
+            getInstance().driver = new ChromeDriver(chromeOptions);
         }
 
         getInstance().driver.manage().timeouts().implicitlyWait(IMPLICIT_WAIT_TIME, TimeUnit.SECONDS);

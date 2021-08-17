@@ -33,6 +33,15 @@ For example, to run with FireFox, just use:
 ./gradlew :cleanTest :test -Dbrowser=firefox
 ```
 
+### Run for continuous integration environments
+IF we want to ru our tests in a continuous integration environment we can add the  flag -Dci=true. This will run browsers headless. If we don't set it, or we set any other value than true, test are executed in normal mode. 
+
+Use example:
+
+```
+./gradlew :cleanTest :test -Dci=true
+```
+
 ## Test results
 After test execution, a basic HTML report is automatically generated in ./target/ folder.
 

@@ -44,6 +44,7 @@ configurations {
 test {
     systemProperty 'browser', System.getProperty('browser')
     systemProperty 'url', System.getProperty('url')
+    systemProperty 'ci', System.getProperty('ci')
 
     retry {
         maxRetries = 1
