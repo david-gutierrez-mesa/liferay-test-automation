@@ -11,10 +11,10 @@ import static utils.tools.SystemProperties.getUrl;
 public class TestContext {
     private static final String DEFAULT_URL = "http://localhost:8080/";
 
-    private URL baseUrl;
+    private final URL baseUrl;
     private RegisteredUser user;
 
-    private LayoutObjectManager layoutObjectManager;
+    private final LayoutObjectManager layoutObjectManager;
 
     public TestContext() throws MalformedURLException {
         URL url = getUrl();

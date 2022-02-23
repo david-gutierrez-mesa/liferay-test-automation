@@ -19,8 +19,8 @@ import static utils.JSON.Users.deleteUser;
 public class HomePageSteps implements En {
 
     private static boolean firstExecution = false;
-    private TestContext testContext;
-    private PublicLayout publicLayoutHomePage;
+    private final TestContext testContext;
+    private final PublicLayout publicLayoutHomePage;
 
     public HomePageSteps(TestContext testContext) {
         this.testContext = testContext;
@@ -43,15 +43,13 @@ public class HomePageSteps implements En {
     public void beforeAll() throws IOException, TimeoutException {
         if (!firstExecution) {
             RegisteredUser user = UserFactory.getUser(UserTypes.STANDARD_USER);
-            Runtime.getRuntime().addShutdownHook(new Thread() {
-                public void run() {
-                    try {
-                        deleteUser(user);
-                    } catch (IOException | TimeoutException e) {
-                        e.printStackTrace();
-                    }
+            Runtime.getRuntime().addShutdownHook(new Thread(() -> {
+                try {
+                    deleteUser(user);
+                } catch (IOException | TimeoutException e) {
+                    e.printStackTrace();
                 }
-            });
+            }));
             Users.createUser(user);
             Users.addUserToASiteByEmail(user.getEmail(), "Guest");
             firstExecution = true;
