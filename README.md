@@ -49,7 +49,7 @@ After test execution, a basic HTML report is automatically generated in ./target
 1) Install docker https://docs.docker.com/get-docker/
 2) Increase your Memory in docker to at least 6.00 GB (settings-> Resources -> Advanced -> Memory) 
 3) Run 
-> docker run --name my-local-liferay-test --rm -p 9080:8080 dgutimesa/my-test:v4
+> docker run --name my-local-liferay-test --rm -p 9080:8080 dgutimesa/my-test:7.4.3.12-ga12
 4) Run test in a console
 > ./gradlew :cleanTest :test -Durl=http://localhost:9080/
 
