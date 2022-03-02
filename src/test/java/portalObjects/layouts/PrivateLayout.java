@@ -15,7 +15,7 @@ public class PrivateLayout extends LiferayLayout {
     }
 
     //
-    // Common Page Parts for logged in users by composition. For example menus
+    // Common Page Parts for logged-in users by composition. For example menus
     //
 
     public boolean stickerOverlayIsDisplayed() {
