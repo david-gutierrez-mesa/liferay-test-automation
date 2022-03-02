@@ -8,12 +8,10 @@ import static junit.framework.TestCase.assertTrue;
 
 public class HomePageSteps implements En {
 
-    private TestContext testContext;
-    private PrivateLayout privateLayoutHomePage;
+    private final PrivateLayout privateLayoutHomePage;
 
     public HomePageSteps(TestContext testContext) {
-        this.testContext = testContext;
-        this.privateLayoutHomePage = this.testContext.getLayoutObjectManager().getPrivateLayoutHomePage();
+        this.privateLayoutHomePage = testContext.getLayoutObjectManager().getPrivateLayoutHomePage();
 
         When("^I navigate to \"([^\"]*)\"$", (String page) -> {
             this.privateLayoutHomePage.navigateToPage(page);

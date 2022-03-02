@@ -4,7 +4,7 @@ import portalObjects.components.MyAmazingFragmentComponent;
 import portalObjects.pages.abstracts.PrivatePO;
 
 public class MyAmazingPage extends PrivatePO {
-    private MyAmazingFragmentComponent myAmazingFragmentComponent;
+    private final MyAmazingFragmentComponent myAmazingFragmentComponent;
 
     public MyAmazingPage() {
         myAmazingFragmentComponent = new MyAmazingFragmentComponent();

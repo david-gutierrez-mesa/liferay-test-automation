@@ -35,6 +35,7 @@ public class BaseTest {
 
     @After
     public void tearDown() {
+        DriverManager.getDriver().get(testContext.getBaseUrl().toString());
         DriverManager.getDriver().manage().deleteAllCookies();
         DriverManager.getDriver().navigate().refresh();
     }
