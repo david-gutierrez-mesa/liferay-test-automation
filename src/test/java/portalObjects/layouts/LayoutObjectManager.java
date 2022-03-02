@@ -10,7 +10,7 @@ public class LayoutObjectManager {
     private PrivateLayout privateLayoutHomePage;
     private PrivateLayout privateLayoutMyAmazingPage;
 
-    private URL baseURL;
+    private final URL baseURL;
 
     public LayoutObjectManager(URL baseURL) {
         this.baseURL = baseURL;

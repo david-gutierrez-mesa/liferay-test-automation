@@ -10,7 +10,7 @@ import static browserManager.CommonMethods.*;
 import static portalObjects.paths.LoginPaths.*;
 
 public class LoginComponent {
-    private URL baseUrl;
+    private final URL baseUrl;
 
     public LoginComponent(URL baseUrl) {
         this.baseUrl = baseUrl;

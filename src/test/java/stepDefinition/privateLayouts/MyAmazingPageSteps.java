@@ -9,12 +9,10 @@ import static junit.framework.TestCase.assertTrue;
 
 public class MyAmazingPageSteps implements En {
 
-    private TestContext testContext;
-    private PrivateLayout privateLayoutMyAmazingPage;
+    private final PrivateLayout privateLayoutMyAmazingPage;
 
     public MyAmazingPageSteps(TestContext testContext) {
-        this.testContext = testContext;
-        this.privateLayoutMyAmazingPage = this.testContext.getLayoutObjectManager().getPrivateLayoutMyAmazingPage();
+        this.privateLayoutMyAmazingPage = testContext.getLayoutObjectManager().getPrivateLayoutMyAmazingPage();
 
         Then("^I can see my name$", () -> {
             String myName = testContext.getUser().getFirstName();

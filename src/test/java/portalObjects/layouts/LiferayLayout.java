@@ -8,7 +8,7 @@ import java.net.URL;
 
 public abstract class LiferayLayout {
     protected LiferayPO page;
-    private URL baseUrl;
+    private final URL baseUrl;
 
     public LiferayLayout(URL baseUrl) {
         PageFactory.initElements(DriverManager.getDriver(), this);
