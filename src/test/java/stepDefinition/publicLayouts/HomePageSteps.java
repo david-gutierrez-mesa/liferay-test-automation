@@ -52,6 +52,7 @@ public class HomePageSteps implements En {
                 }
             }));
             Company.disablePasswordChangeRequired();
+
             Users.createUser(user);
             Users.addUserToASiteByEmail(user.getEmail(), "Guest");
             firstExecution = true;
