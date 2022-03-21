@@ -1,4 +1,4 @@
-package utils.JSON;
+package utils.APIs;
 
 import com.liferay.poshi.runner.util.PropsUtil;
 
