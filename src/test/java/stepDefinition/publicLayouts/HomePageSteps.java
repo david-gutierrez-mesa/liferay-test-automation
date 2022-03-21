@@ -8,6 +8,7 @@ import portalObjects.layouts.PublicLayout;
 import portalObjects.users.RegisteredUser;
 import portalObjects.users.UserFactory;
 import portalObjects.users.UserTypes;
+import utils.JSON.Company;
 import utils.JSON.Users;
 
 import java.io.IOException;
@@ -50,6 +51,7 @@ public class HomePageSteps implements En {
                     e.printStackTrace();
                 }
             }));
+            Company.disablePasswordChangeRequired();
             Users.createUser(user);
             Users.addUserToASiteByEmail(user.getEmail(), "Guest");
             firstExecution = true;
