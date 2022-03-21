@@ -8,14 +8,14 @@ import portalObjects.layouts.PublicLayout;
 import portalObjects.users.RegisteredUser;
 import portalObjects.users.UserFactory;
 import portalObjects.users.UserTypes;
-import utils.JSON.Company;
-import utils.JSON.Users;
+import utils.APIs.Company;
+import utils.APIs.Users;
 
 import java.io.IOException;
 import java.util.concurrent.TimeoutException;
 
 import static junit.framework.TestCase.assertTrue;
-import static utils.JSON.Users.deleteUser;
+import static utils.APIs.Users.deleteUser;
 
 public class HomePageSteps implements En {
 

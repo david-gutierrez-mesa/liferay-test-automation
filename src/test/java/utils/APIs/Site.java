@@ -1,12 +1,12 @@
-package utils.JSON;
+package utils.APIs;
 
 import com.liferay.poshi.runner.util.JSONCurlUtil;
 
 import java.io.IOException;
 import java.util.concurrent.TimeoutException;
 
-import static utils.JSON.Company.getCompanyId;
-import static utils.JSON.Generic.*;
+import static utils.APIs.Company.getCompanyId;
+import static utils.APIs.Generic.*;
 
 public class Site {
     private Site() {

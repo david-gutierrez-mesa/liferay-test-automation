@@ -1,4 +1,4 @@
-package utils.JSON;
+package utils.APIs;
 
 import com.liferay.poshi.runner.util.JSONCurlUtil;
 import portalObjects.users.RegisteredUser;
@@ -6,9 +6,9 @@ import portalObjects.users.RegisteredUser;
 import java.io.IOException;
 import java.util.concurrent.TimeoutException;
 
-import static utils.JSON.Company.getCompanyId;
-import static utils.JSON.Generic.*;
-import static utils.JSON.Site.getSiteId;
+import static utils.APIs.Company.getCompanyId;
+import static utils.APIs.Generic.*;
+import static utils.APIs.Site.getSiteId;
 
 public class Users {
     private Users() {
