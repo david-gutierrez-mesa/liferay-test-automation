@@ -82,11 +82,6 @@ public class Users {
 
         String userId = getUserIdByEmailAddress(user.getEmail());
 
-        deleteUserByUserId(userId);
-
-    }
-
-    public static void deleteUserByUserId(String userId) throws IOException, TimeoutException {
         String baseUrl = getPortalURL();
 
         String curl = String.format("%sapi/jsonws/user/delete-user -u %s:%s -d userId=%s", baseUrl, ADMIN_USER_EMAIL, ADMIN_USER_PASSWORD, userId);
