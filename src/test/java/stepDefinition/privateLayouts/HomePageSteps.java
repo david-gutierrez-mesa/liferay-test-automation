@@ -15,7 +15,7 @@ public class HomePageSteps implements En {
 
         When("^I navigate to \"([^\"]*)\"$", (String page) -> {
             this.privateLayoutHomePage.navigateToPage(page);
-            assertTrue(this.privateLayoutHomePage.getPage().assertPageIsCorrect());
+            assertTrue(this.privateLayoutHomePage.getPage().isPageCorrect());
         });
 
     }
