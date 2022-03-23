@@ -10,7 +10,7 @@ public abstract class LiferayPO {
     public LiferayPO() {
     }
 
-    public boolean assertPageIsCorrect() {
+    public boolean isPageCorrect() {
         return getPageTitle().contains(getPageName());
     }
 
